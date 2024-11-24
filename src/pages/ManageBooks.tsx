@@ -51,30 +51,31 @@ export default function ManageBooks() {
       <div className="mt-12">
         <div className="flex flex-wrap gap-2">
           {
-            state.books.length > 0 &&
-            state.books?.map((book: Book) => {
-              return (
-                <CardWrraper
-                  {...book}
-                  key={book.id}
-                  type="dashboardCard"
-                >
-                  <div className="relative">
-                    <button onClick={() => handleOpenDropdown(book.id)}>
-                      <DotIcon />
-                    </button>
-                    <CartDropdownMenu
-                      id={book.id}
-                      openDropdownId={openDropdownId!}
-                      // pass the props to modal manager as the second argument
-                      onEdit={() => openModal("editModal", { bookId: book.id, bookName: book.bookName, bookPrice: book.bookPrice })}
-                      onDelete={() => openModal("deleteModal", { bookId: book.id, bookName: book.bookName })}
-                    />
-                  </div>
-                </CardWrraper>
-              )
+            state.books.length > 0 ?
+              state.books?.map((book: Book) => {
+                return (
+                  <CardWrraper
+                    {...book}
+                    key={book.id}
+                    type="dashboardCard"
+                  >
+                    <div className="relative">
+                      <button onClick={() => handleOpenDropdown(book.id)}>
+                        <DotIcon />
+                      </button>
+                      <CartDropdownMenu
+                        id={book.id}
+                        openDropdownId={openDropdownId!}
+                        // pass the props to modal manager as the second argument
+                        onEdit={() => openModal("editModal", { bookId: book.id, bookName: book.bookName, bookPrice: book.bookPrice })}
+                        onDelete={() => openModal("deleteModal", { bookId: book.id, bookName: book.bookName })}
+                      />
+                    </div>
+                  </CardWrraper>
+                )
+              })
+              : <h1>کتابی موجود نیست به صفحه داشبورد مراجعه کنید</h1>
 
-            })
           }
         </div>
       </div>

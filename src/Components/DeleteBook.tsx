@@ -40,7 +40,7 @@ export default function DeleteModal({ bookId, bookName, onClose }: Props) {
         <div className="">
           <h3 className="text-lg font-medium text-start">
             ایا از حذف کتاب{" "}
-            <span className="text-red-500">(تخریب با دیزاین)</span> مطمئن هستید؟
+            <span className="text-red-500">({bookName})</span> مطمئن هستید؟
           </h3>
         </div>
       </div>

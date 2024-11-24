@@ -36,7 +36,7 @@ export default function Home() {
             </div>
             <div className="flex flex-wrap gap-2 mt-12">
                 {
-                    state.books.length > 0 &&
+                    state.books.length > 0 ?
                     state.books?.map((book: Book) => {
                         const cartItem = state.cart.find(item => item.id === book.id);
                         return (
@@ -58,6 +58,7 @@ export default function Home() {
                             </CardWrraper>
                         )
                     })
+                    :<h1>کتابی موجود نیست به صفحه داشبورد مراجعه کنید</h1>
                 }
             </div >
         </>

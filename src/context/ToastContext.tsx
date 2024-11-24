@@ -24,7 +24,8 @@ export const ToastProvider = ({ children }: childrenProps) => {
     const open = useCallback((title: string, component: React.ReactNode) => {
         const id = Date.now()
         setToast({ id, title, component })
-        setTimeout(() => close(), 4000)
+        const timer = setTimeout(() => close(), 4000)
+        return () => timer
     }, [])
 
     const close = useCallback(() => {
