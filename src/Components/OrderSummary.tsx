@@ -26,7 +26,7 @@ export default function OrderSummary() {
                                         نام کتاب: <span className="font-bold ">{cart.bookName}</span>
                                     </p>
                                     <p className="text-xs font-medium ">
-                                        {Number(50000).toLocaleString("fa-IR")} تومان
+                                        {Number(cart.bookPrice).toLocaleString("fa-IR")} تومان
                                     </p>
                                     <QuantityControler
                                         quantity={cart.quantity}
