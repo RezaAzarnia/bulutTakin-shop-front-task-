@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply font-[IRANSansX] bg-gray-100;
+}
+
+
+/* handle the side bar icons color */
+.sidebar-link span svg {
+  stroke: #333741 !important;
+}
+.sidebar-link.active span svg {
+  stroke: white !important;
+}
+/* finish sidebar icons color */
+
+/* handle the scrooll bar styles */
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #cecfd2;
+  border-radius: 16px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
