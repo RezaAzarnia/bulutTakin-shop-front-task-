@@ -1,5 +1,5 @@
-import EditIcon from "../Icons/EditIcon";
-import DeleteIcon from "../Icons/DeleteIcon";
+import EditIcon from "../../Icons/EditIcon";
+import DeleteIcon from "../../Icons/DeleteIcon";
 type Props = {
   id: number;
   openDropdownId: number;

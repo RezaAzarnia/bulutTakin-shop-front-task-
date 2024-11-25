@@ -1,9 +1,9 @@
-import { InputErrorType } from "../types";
+import { InputErrorType } from "../../types";
 
 type Props = {
     name: string;
-    value?: string | number;
-    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    value: string | number;
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     label?: string;
     placeholder?: string;
     type?: string;

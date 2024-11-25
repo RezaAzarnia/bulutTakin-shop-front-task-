@@ -1,9 +1,9 @@
-import { useToast } from "../context/ToastContext";
-import { useBooksStore } from "../context/BooksProvider";
-import { Book } from "../types";
-import useLocalStorage from "../hooks/useLocalStorage";
-import CloseIcon from "../Icons/CloseIcon";
-import Button from "./Button";
+import { useToast } from "../../context/ToastContext";
+import { useBooksStore } from "../../context/BooksProvider";
+import { Book } from "../../types";
+import useLocalStorage from "../../hooks/useLocalStorage";
+import CloseIcon from "../../Icons/CloseIcon";
+import Button from "../common/Button";
 type Props = {
   onClose: () => void;
   bookId?: number;
@@ -33,7 +33,7 @@ export default function DeleteModal({ bookId, bookName, onClose }: Props) {
       <div className="space-y-8">
         <div className="flex items-center justify-between pb-2 border-b border-gray-300 ">
           <h2 className="text-xl font-bold">حذف کتاب </h2>
-          <button>
+          <button onClick={onClose}>
             <CloseIcon />
           </button>
         </div>

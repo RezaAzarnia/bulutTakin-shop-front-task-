@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import Profile from "../Icons/Profile";
+import Profile from "../../Icons/Profile";
 type NavItems = {
   to: string;
   text: string;

@@ -1,14 +1,14 @@
-import useInput from "../hooks/useInput";
-import useLocalStorage from "../hooks/useLocalStorage";
-import CloseIcon from "../Icons/CloseIcon";
-import { Book } from "../types";
-import { useBooksStore } from "../context/BooksProvider";
-import FormInput from "./FormInput";
 import { FormEvent } from "react";
-import Button from "./Button";
-import BookIcon from "../Icons/BookIcon";
-import MoneyIcon from "../Icons/MoneyIcon";
-import { useToast } from "../context/ToastContext";
+import useInput from "../../hooks/useInput";
+import useLocalStorage from "../../hooks/useLocalStorage";
+import CloseIcon from "../../Icons/CloseIcon";
+import FormInput from "../forms/FormInput";
+import Button from "../common/Button";
+import BookIcon from "../../Icons/BookIcon";
+import MoneyIcon from "../../Icons/MoneyIcon";
+import { Book } from "../../types";
+import { useBooksStore } from "../../context/BooksProvider";
+import { useToast } from "../../context/ToastContext";
 
 type Props = {
   onClose: () => void;

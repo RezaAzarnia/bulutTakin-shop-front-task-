@@ -1,5 +1,5 @@
-import AlertIcon from "../Icons/AlertIcon";
-import Profile from "../Icons/Profile";
+import AlertIcon from "../../Icons/AlertIcon";
+import Profile from "../../Icons/Profile";
 
 export default function DashboardNavbar() {
   return (
