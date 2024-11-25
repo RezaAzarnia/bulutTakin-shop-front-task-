@@ -1,6 +1,6 @@
 import { ChangeEvent, useEffect, useState } from 'react'
-import UploadIcon from '../Icons/UploadIcon'
-import DeleteIcon from '../Icons/DeleteIcon'
+import UploadIcon from '../../Icons/UploadIcon'
+import DeleteIcon from '../../Icons/DeleteIcon'
 type PictureInfo = {
     pictureSrc: string | ArrayBuffer | null,
     pictureName: string
@@ -18,6 +18,7 @@ export default function UploadPicture({ onLoadPicture, isFormSubmited }: Props) 
         if (!target.files) return
 
         const file: File = target.files[0] as File
+        
         if (!file.type.includes("image")) {
             setError("فرمت فایل انتخاب شده نامعتبر است. لطفا یک عکس انتخاب کنید.");
             return

@@ -1,11 +1,11 @@
-import { Book } from "../types";
+import { Book } from "../../types";
 
 type CardProps = Book & {
   children: React.ReactNode;
   type?: "dashboardCard" | "shoppingCard";
 };
 
-function CardWrraper({
+function BookCard({
   bookCover,
   bookName,
   bookPrice,
@@ -37,4 +37,4 @@ function CardWrraper({
     </div>
   );
 }
-export default (CardWrraper)
+export default BookCard

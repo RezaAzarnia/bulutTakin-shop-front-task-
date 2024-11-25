@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { useModal } from "../context/ModalProvider";
 import { useBooksStore } from '../context/BooksProvider'
 import { Book } from "../types";
-import CardWrraper from "../Components/CardWrraper";
+import BookCard from "../Components/common/BookCard";
 import DotIcon from "../Icons/DotIcon";
-import CartDropdownMenu from "../Components/CartDropdownMenu";
-import Button from "../Components/Button";
+import CartDropdownMenu from "../Components/cart/CartDropdownMenu";
+import Button from "../Components/common/Button";
 import PlusIcon from "../Icons/PlusIcon";
 import SearchIcon from "../Icons/SearchIcon";
 
@@ -27,7 +27,6 @@ export default function ManageBooks() {
   }, []);
   return (
     <>
-
       <div className="flex items-center justify-between">
         <h2 className="text-xl font-bold text-gray-950">مدیریت کتاب ها</h2>
         <div className="flex items-center gap-5">
@@ -54,7 +53,7 @@ export default function ManageBooks() {
             state.books.length > 0 ?
               state.books?.map((book: Book) => {
                 return (
-                  <CardWrraper
+                  <BookCard
                     {...book}
                     key={book.id}
                     type="dashboardCard"
@@ -71,7 +70,7 @@ export default function ManageBooks() {
                         onDelete={() => openModal("deleteModal", { bookId: book.id, bookName: book.bookName })}
                       />
                     </div>
-                  </CardWrraper>
+                  </BookCard>
                 )
               })
               : <h1>کتابی موجود نیست لفا از بخش افزودن کتاب اضافه کنید</h1>

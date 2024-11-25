@@ -1,6 +1,6 @@
-import DeleteIcon from "../Icons/DeleteIcon"
-import MinusIcon from "../Icons/MinusIcon"
-import PlusIcon from "../Icons/PlusIcon"
+import DeleteIcon from "../../Icons/DeleteIcon"
+import MinusIcon from "../../Icons/MinusIcon"
+import PlusIcon from "../../Icons/PlusIcon"
 
 type Props = {
     onIncrease: () => void

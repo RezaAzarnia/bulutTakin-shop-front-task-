@@ -1,10 +1,10 @@
 import { memo, useCallback, useState } from "react";
 import { NavLink } from "react-router-dom";
-import DashboardIcon from "../Icons/DashboardIcon";
-import BookIcon from "../Icons/BookIcon";
-import AuthorsIcon from "../Icons/AuthorsIcon";
-import LogoutIcon from "../Icons/LogoutIcon";
-import ArrowIcon from "../Icons/ArrowIcon";
+import DashboardIcon from "../../Icons/DashboardIcon";
+import BookIcon from "../../Icons/BookIcon";
+import AuthorsIcon from "../../Icons/AuthorsIcon";
+import LogoutIcon from "../../Icons/LogoutIcon";
+import ArrowIcon from "../../Icons/ArrowIcon";
 const navItems = [
   {
     icon: <DashboardIcon />,

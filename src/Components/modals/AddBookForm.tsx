@@ -1,15 +1,15 @@
-import { useBooksStore } from "../context/BooksProvider";
+import { useBooksStore } from "../../context/BooksProvider";
 import { FormEvent, useState } from "react";
-import { Book } from "../types";
-import CloseIcon from "../Icons/CloseIcon";
-import FormInput from "./FormInput";
-import useInput from "../hooks/useInput";
-import UploadPicture from "./UploadPicture";
-import useLocalStorage from "../hooks/useLocalStorage";
-import PlusIcon from "../Icons/PlusIcon";
-import Button from "./Button";
-import BookIcon from "../Icons/BookIcon";
-import MoneyIcon from "../Icons/MoneyIcon";
+import { Book } from "../../types";
+import CloseIcon from "../../Icons/CloseIcon";
+import FormInput from "../forms/FormInput";
+import useInput from "../../hooks/useInput";
+import UploadPicture from "../forms/UploadPicture";
+import useLocalStorage from "../../hooks/useLocalStorage";
+import PlusIcon from "../../Icons/PlusIcon";
+import Button from "../common/Button";
+import BookIcon from "../../Icons/BookIcon";
+import MoneyIcon from "../../Icons/MoneyIcon";
 
 type Props = {
   onClose: () => void

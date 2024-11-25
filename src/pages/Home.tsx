@@ -1,13 +1,13 @@
 import { useBooksStore } from '../context/BooksProvider'
-import CardWrraper from '../Components/CardWrraper'
-import OrderSummary from '../Components/OrderSummary'
+import BookCard from '../Components/common/BookCard'
+import OrderSummary from '../Components/cart/OrderSummary'
 import CartIcon from '../Icons/CartIcon'
 import PlusIcon from '../Icons/PlusIcon'
 import { Book } from '../types'
-import Button from '../Components/Button'
+import Button from '../Components/common/Button'
 import useCart from '../hooks/useCart'
 import { useState } from 'react'
-import QuantityControler from '../Components/QuantityControler'
+import QuantityControler from '../Components/cart/QuantityControler'
 
 export default function Home() {
     const { state } = useBooksStore()
@@ -40,7 +40,7 @@ export default function Home() {
                     state.books?.map((book: Book) => {
                         const cartItem = state.cart.find(item => item.id === book.id);
                         return (
-                            <CardWrraper {...book} key={book.id} type="shoppingCard">
+                            <BookCard {...book} key={book.id} type="shoppingCard">
                                 {!cartItem ?
 
                                     <Button style='w-full text-white bg-purple-primary' onClick={() => handleAddToCart(book)}>
@@ -55,7 +55,7 @@ export default function Home() {
                                         onDelete={() => handleDelete(cartItem.id)}
                                     />
                                 }
-                            </CardWrraper>
+                            </BookCard>
                         )
                     })
                     :<h1>کتابی موجود نیست به صفحه داشبورد مراجعه کنید</h1>

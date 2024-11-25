@@ -1,11 +1,11 @@
 import { RouterProvider } from "react-router-dom";
 import router from "./routes/router.tsx";
 import ModalProvider from "./context/ModalProvider.tsx";
-import ModalManager from "./Components/ModalManager.tsx";
+import ModalManager from "./Components/modals/ModalManager.tsx";
 import { BooksProvider } from "./context/BooksProvider.tsx";
 import { ToastProvider } from "./context/ToastContext.tsx";
-import "./index.css";
-import "./fonts.css";
+import "./assets/styles/fonts.css"
+import "./assets/styles/index.css"
 
 export default function App() {
     //we have three context but each of them have a good reason 

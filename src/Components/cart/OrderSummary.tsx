@@ -1,5 +1,5 @@
-import { useBooksStore } from '../context/BooksProvider'
-import useCart from '../hooks/useCart'
+import { useBooksStore } from '../../context/BooksProvider'
+import useCart from '../../hooks/useCart'
 import QuantityControler from './QuantityControler'
 
 export default function OrderSummary() {
