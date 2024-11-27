@@ -56,13 +56,13 @@ export default function AddBookForm({ onClose }: Props) {
   }
   return (
     <>
-      <div className="flex items-center justify-between pb-10 mb-6 border-b border-gray-300">
+      <div className="flex items-center justify-between pb-6 mb-6 border-b border-gray-300">
         <h2 className="text-xl font-bold">افزودن کتاب</h2>
         <button onClick={onClose}>
           <CloseIcon />
         </button>
       </div>
-      <form className="flex flex-col h-full space-y-24" onSubmit={handleSubmit}>
+      <form className="flex flex-col h-full space-y-20" onSubmit={handleSubmit}>
         <div className="pb-4 space-y-6 ">
           <FormInput label="نام کتاب"
             name="bookName"

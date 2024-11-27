@@ -22,7 +22,7 @@ export default function Home() {
                     onMouseEnter={() => setIshowCart(true)}
                     onMouseLeave={() => setIshowCart(false)}
                 >
-                    <button className='flex items-center gap-2 px-4 py-3 text-lg font-semibold border rounded-lg border-purple-primary text-purple-primary' >
+                    <button className='flex items-center gap-2 px-4 py-2 text-lg font-semibold border rounded-lg border-purple-primary text-purple-primary' >
                         <CartIcon />
                         سبد خرید
                     </button>
@@ -37,28 +37,28 @@ export default function Home() {
             <div className="flex flex-wrap gap-2 mt-12">
                 {
                     state.books.length > 0 ?
-                    state.books?.map((book: Book) => {
-                        const cartItem = state.cart.find(item => item.id === book.id);
-                        return (
-                            <BookCard {...book} key={book.id} type="shoppingCard">
-                                {!cartItem ?
+                        state.books?.map((book: Book) => {
+                            const cartItem = state.cart.find(item => item.id === book.id);
+                            return (
+                                <BookCard {...book} key={book.id} type="shoppingCard">
+                                    {!cartItem ?
 
-                                    <Button style='w-full text-white bg-purple-primary' onClick={() => handleAddToCart(book)}>
-                                        <PlusIcon />
-                                        افزودن به سبد
-                                    </Button>
-                                    :
-                                    <QuantityControler
-                                        quantity={cartItem.quantity}
-                                        onIncrease={() => handleIncrease(cartItem.id)}
-                                        onDecrease={() => handleDecrease(cartItem.id)}
-                                        onDelete={() => handleDelete(cartItem.id)}
-                                    />
-                                }
-                            </BookCard>
-                        )
-                    })
-                    :<h1>کتابی موجود نیست به صفحه داشبورد مراجعه کنید</h1>
+                                        <Button style='w-full text-white bg-purple-primary' onClick={() => handleAddToCart(book)}>
+                                            <PlusIcon />
+                                            افزودن به سبد
+                                        </Button>
+                                        :
+                                        <QuantityControler
+                                            quantity={cartItem.quantity}
+                                            onIncrease={() => handleIncrease(cartItem.id)}
+                                            onDecrease={() => handleDecrease(cartItem.id)}
+                                            onDelete={() => handleDelete(cartItem.id)}
+                                        />
+                                    }
+                                </BookCard>
+                            )
+                        })
+                        : <h1>کتابی موجود نیست به صفحه داشبورد مراجعه کنید</h1>
                 }
             </div >
         </>

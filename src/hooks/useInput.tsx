@@ -13,7 +13,7 @@ export default function useInput(initialValues: InputsSchema) {
     }, [])
 
     //handle the input change values here
-    const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const handleInputChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
         const newValue: InputValue = {
             ...inputValue,
             [e.target.name]: e.target.value
@@ -25,7 +25,7 @@ export default function useInput(initialValues: InputsSchema) {
             ...prev,
             [e.target.name]: errors[e.target.name],
         }));
-    }
+    }, [inputValue])
 
     const validateAllInputs = useCallback(() => {
         const errors = checkErrors(inputValue);
@@ -42,7 +42,6 @@ export default function useInput(initialValues: InputsSchema) {
             if (value.required && typeof inputValue === 'string' && inputValue.length === 0) {
                 errors[key] = value.required
             }
-
             else if (value.min && typeof inputValue === "string" && inputValue.length <= value.min.value) {
                 errors[key] = value.min.message
             }

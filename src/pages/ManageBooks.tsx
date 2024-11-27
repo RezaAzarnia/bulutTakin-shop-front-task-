@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useModal } from "../context/ModalProvider";
 import { useBooksStore } from '../context/BooksProvider'
 import { Book } from "../types";
@@ -13,18 +13,6 @@ export default function ManageBooks() {
   const { openModal } = useModal();
   const [openDropdownId, setOpenDropdownId] = useState<null | number>(null);
   const { state } = useBooksStore()
-  const handleOpenDropdown = (id: number) => {
-    setOpenDropdownId(id);
-  };
-  const handleCloseDropdown = () => {
-    setOpenDropdownId(null);
-  };
-
-  useEffect(() => {
-    document.body.addEventListener("click", handleCloseDropdown, true);
-    return () =>
-      document.body.removeEventListener("click", handleCloseDropdown, true);
-  }, []);
   return (
     <>
       <div className="flex items-center justify-between">
@@ -59,12 +47,13 @@ export default function ManageBooks() {
                     type="dashboardCard"
                   >
                     <div className="relative">
-                      <button onClick={() => handleOpenDropdown(book.id)}>
+                      <button onClick={() => setOpenDropdownId(book.id)}>
                         <DotIcon />
                       </button>
                       <CartDropdownMenu
-                        id={book.id}
+                        BookId={book.id}
                         openDropdownId={openDropdownId!}
+                        closeDropDown={() => setOpenDropdownId(null)}
                         // pass the props to modal manager as the second argument
                         onEdit={() => openModal("editModal", { bookId: book.id, bookName: book.bookName, bookPrice: book.bookPrice })}
                         onDelete={() => openModal("deleteModal", { bookId: book.id, bookName: book.bookName })}
@@ -74,7 +63,6 @@ export default function ManageBooks() {
                 )
               })
               : <h1>کتابی موجود نیست لفا از بخش افزودن کتاب اضافه کنید</h1>
-
           }
         </div>
       </div>

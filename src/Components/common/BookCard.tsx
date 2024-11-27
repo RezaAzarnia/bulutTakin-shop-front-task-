@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Book } from "../../types";
 
 type CardProps = Book & {
@@ -16,7 +17,7 @@ function BookCard({
     <div className="w-[306px] min-h-[400px] border border-gray-300 rounded-[4px] shadow-lg bg-white flex flex-col">
       <div className="flex-1 bg-gray-100 ">
         <img
-          src={bookCover as string}
+          src={bookCover.toString()}
           alt={bookName}
           className="object-cover w-full h-[306px]"
         />
@@ -26,7 +27,7 @@ function BookCard({
           <h3 className="text-lg font-bold text-gray-950">{bookName}</h3>
           {type === "dashboardCard" && children}
         </div>
-        <div>
+        <div className="w-fit">
           <span className="text-sm font-medium text-gray-400">قیمت :</span>
           <span className="text-base font-bold text-gray-950">
             {Number(bookPrice).toLocaleString("fa-IR")} تومان
@@ -37,4 +38,4 @@ function BookCard({
     </div>
   );
 }
-export default BookCard
+export default memo(BookCard)

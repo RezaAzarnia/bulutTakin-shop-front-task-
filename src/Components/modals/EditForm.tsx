@@ -55,7 +55,7 @@ export default function EditModal({ bookId, bookName, bookPrice, onClose }: Prop
         }
         return book
       })
-      console.log(updatedBook);
+      // console.log(updatedBook);
 
       addToLocal("books", updatedBook as Book[])
       dispatch({ type: "AddBookToLocal", payload: updatedBook as Book[] })
@@ -71,7 +71,7 @@ export default function EditModal({ bookId, bookName, bookPrice, onClose }: Prop
   return (
     <>
       <div className="flex flex-col gap-12 ">
-        <div className="flex items-center justify-between pb-10 border-b border-gray-300 ">
+        <div className="flex items-center justify-between pb-8 border-b border-gray-300 ">
           <h2 className="text-xl font-bold" >ویرایش کتاب </h2>
           <button onClick={onClose}>
             <CloseIcon />

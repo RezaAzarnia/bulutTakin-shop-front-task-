@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useState } from 'react'
+import { ChangeEvent, memo, useEffect, useState } from 'react'
 import UploadIcon from '../../Icons/UploadIcon'
 import DeleteIcon from '../../Icons/DeleteIcon'
 type PictureInfo = {
@@ -9,7 +9,7 @@ type Props = {
     onLoadPicture: React.Dispatch<React.SetStateAction<string | ArrayBuffer | null>>
     isFormSubmited: boolean
 }
-export default function UploadPicture({ onLoadPicture, isFormSubmited }: Props) {
+function UploadPicture({ onLoadPicture, isFormSubmited }: Props) {
     const [pictureInfo, setPictureInfo] = useState<PictureInfo>({ pictureSrc: '', pictureName: '' })
     const [error, setError] = useState('')
 
@@ -18,7 +18,7 @@ export default function UploadPicture({ onLoadPicture, isFormSubmited }: Props) 
         if (!target.files) return
 
         const file: File = target.files[0] as File
-        
+
         if (!file.type.includes("image")) {
             setError("فرمت فایل انتخاب شده نامعتبر است. لطفا یک عکس انتخاب کنید.");
             return
@@ -82,3 +82,4 @@ export default function UploadPicture({ onLoadPicture, isFormSubmited }: Props) 
         </>
     )
 }
+export default memo(UploadPicture)
